@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AppContext } from '../context/context'
 
 const DetailModal = (props) => {
+
+    const context = useContext(AppContext)
+    let {modalDetail} = context
+console.log(modalDetail)
+
   return (
     <div className="modal fade" id="viewmore" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div className="modal-dialog">
@@ -16,27 +22,27 @@ const DetailModal = (props) => {
                     <tbody>
                         <tr>
                             <th scope="row">Name</th>
-                            <td>{props.item}</td>
+                            <td>{modalDetail.item}</td>
                         </tr>
                         <tr>
                             <th scope="row">Price</th>
-                            <td>{props.price}</td>
+                            <td>${modalDetail.price*modalDetail.quinetity}</td>
                         </tr>
                         <tr>
                             <th scope="row">Category</th>
-                            <td>{props.category}</td>
+                            <td>{modalDetail.category}</td>
                         </tr>
                         <tr>
                             <th scope="row">Quinetity</th>
-                            <td>{props.quinetity}</td>
+                            <td>{modalDetail.quinetity}</td>
                         </tr>
                         <tr>
                             <th scope="row">Payment type</th>
-                            <td>{props.payment}</td>
+                            <td>{modalDetail.payment}</td>
                         </tr>
                         <tr>
                             <th scope="row">Pincode</th>
-                            <td>{props.pincode}</td>
+                            <td>{modalDetail.pincode}</td>
                         </tr>
                     </tbody>
                 </table>

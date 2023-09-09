@@ -7,7 +7,6 @@ let AppProvider = (props) => {
 
     const [userLogin, setUserLogin] = useState(false)
 
-
     // card array 
     const [cardArr, setCardArr] = useState([])
 
@@ -17,8 +16,13 @@ let AppProvider = (props) => {
     // clicked card detail
     const [ProductDetail, setProductDetail] = useState([])
 
+    // cart item array
+    const [cart, setCart] = useState([])
 
-    // set data in local storage
+    // modlal detail
+    const [modalDetail, setModalDetail] = useState([])
+
+    // get data from local storage
     let localstorageData = JSON.parse(localStorage.getItem("productData"))
 
     if (ProductDetail.length === 0 && localstorageData) {
@@ -38,6 +42,7 @@ let AppProvider = (props) => {
 
     useEffect(() => {
         let authToken = localStorage.getItem("authToken")
+
         getApiData("/")
         if (authToken) {
             setUserLogin(true)
@@ -47,7 +52,7 @@ let AppProvider = (props) => {
     }, [])
 
 
-    const [cart, setCart] = useState([])
+
 
     // add to cart
     let addItem = (pin, que, check, radio) => {
@@ -82,7 +87,7 @@ let AppProvider = (props) => {
 
 
     return (
-        <AppContext.Provider value={{ cardArr, ProductDetail, setProductDetail, getApiData, userLogin, setUserLogin, addItem, cart, removeItem,loading, setLoading }}>
+        <AppContext.Provider value={{ cardArr, ProductDetail, setProductDetail, getApiData, userLogin, setUserLogin, addItem, cart, removeItem, loading, setLoading, modalDetail, setModalDetail }}>
             {props.children}
         </AppContext.Provider>
     )

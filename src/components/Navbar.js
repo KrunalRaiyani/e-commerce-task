@@ -21,7 +21,7 @@ const Navbar = () => {
 
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary sticky-top px-4" style={{boxShadow:"0 -5px 15px #00000080"}}>
-            <div className="container-fluid px-5 py-2">
+            <div className="container-fluid px-5 py-2 my-1">
                 <div className="navbar-brand fw-semibold">Navbar</div>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon" />
