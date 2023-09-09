@@ -22,7 +22,7 @@ const CartItem = (props) => {
 
     return (
         <>
-            <div className="item-card d-flex justify-content-between align-items-center my-3 p-2 items rounded">
+            <div className="item-card d-flex justify-content-between align-items-center my-3 p-4 items rounded" style={{boxShadow:"rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px"}}>
                 <div className="d-flex flex-row">
                     <img className="rounded" src={props.image} width={70} />
                     <div className="ml-2 ms-4">

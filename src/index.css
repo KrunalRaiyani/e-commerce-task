@@ -20,4 +20,7 @@ code {
   background-color: #f4fcff;
 }
 
+.form-control{
+  border: 2px solid rgb(146, 146, 146);
+}
 

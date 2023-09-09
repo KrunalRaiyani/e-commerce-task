@@ -1,11 +1,10 @@
 import React, { useContext } from 'react'
 import { AppContext } from '../context/context'
 
-const DetailModal = (props) => {
+const DetailModal = () => {
 
     const context = useContext(AppContext)
     let {modalDetail} = context
-console.log(modalDetail)
 
   return (
     <div className="modal fade" id="viewmore" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">

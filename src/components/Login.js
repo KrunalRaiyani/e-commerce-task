@@ -52,9 +52,11 @@ const Login = () => {
         });
 
     return (
-        <>
-            <form onSubmit={handleSubmit} className="container mt-4 pt-4">
-                <div className="mb-3">
+        <div className="d-flex align-items-center m-auto gap-4" style={{height:"85vh",width:"80vw"}}>
+            <img src="https://inotebook-todo-app.netlify.app/img/signup.png" alt="login image"  style={{height:"60%"}} />
+            <form onSubmit={handleSubmit} className="container w-50 pb-4">
+                <h2 className="mb-4 pb-2">Login</h2>
+                <div className="mb-4">
                     <label htmlFor="email" className="form-label">
                         Email Address
                     </label>
@@ -72,7 +74,7 @@ const Login = () => {
                         <p className="fs-6 text-danger">{errors.email}</p>
                     )}
                 </div>
-                <div className="mb-3">
+                <div className="mb-4">
                     <label htmlFor="password" className="form-label">
                         Password
                     </label>
@@ -85,17 +87,18 @@ const Login = () => {
                         onBlur={handleBlur}
                         className={`form-control ${errors.password && touched.password ? "err-border" : ""
                             }`}
+                            autoComplete="on"
                     />
                     {errors.password && touched.password && (
                         <p className="fs-6 text-danger">{errors.password}</p>
                     )}
                 </div>
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className={`btn ${errors.password||errors.email ? "btn-danger":"btn-success"} w-100`}>
                     Submit
                 </button>
             </form>
             {errorFlag && <p className="container mt-4 text-danger">plese enter valid email and password</p>}
-        </>
+        </div>
     );
 }
 
